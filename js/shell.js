@@ -215,7 +215,6 @@ var term = $('.content').terminal(commands, {
     this.echo("Welcome to my portfolio terminal. [[;white;]Type 'help' for list of available commands\r\nYou can autocomplete commands and file/folder names by pressing 'TAB']\r\n");
   }
 });
-// for codepen preview
 if (!term.enabled()) {
   term.find('.cursor').addClass('blink');
 }
@@ -227,3 +226,5 @@ function prompt() {
     callback(prompt);
   };
 }
+
+// comment to check git workflow
