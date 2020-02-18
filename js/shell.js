@@ -228,7 +228,4 @@ function prompt() {
 }
 
 // comment to check git workflow
-<<<<<<< HEAD
 
-=======
->>>>>>> 5f9cb816a8c2113f98f5a768f30297977db22ae1
