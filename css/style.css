@@ -14,9 +14,6 @@ body .shell {
   width: 80%;
   height: 520px;
 }
-#macosterm {
-  z-index: 999;
-}
 body .shell .terminal {
   height: calc(100% - 40px);
   padding: 10px;

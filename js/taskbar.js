@@ -31,16 +31,27 @@ document.getElementById("date").innerHTML = day + " " + d.getHours() + ":" + min
 $( document ).ready(function() {
   let menuActive = false;
 
-  $("#tedit").draggable({handle: "#teditbar", containment: ".holder"});
-  $("#tedit").mousedown(function() {
-    $(this).css("z-index", 1000);
-    $("#macosterm").css("z-index", 999);
+  $(".tedit").mousedown(function() {
+    $(this).addClass("window-active");
+    $(".macosterm").removeClass("window-active");
   });
-  $("#macosterm").mousedown(function() {
-    $(this).css("z-index", 1000);
-    $("#tedit").css("z-index", 999);
+  $(".macosterm").mousedown(function() {
+    $(this).addClass("window-active");
+    $(".tedit").removeClass("window-active");
   });
-  $("#macosterm").draggable({handle: "#shellbar", containment: ".holder"});
+
+  $(".tedit").draggable({
+    handle: "#teditbar",
+    containment: ".holder",
+    cancel: "#teditcontent"
+  }).resizable({
+    aspectRatio: true,
+    minWidth: 480
+  });
+  $("#teditbar").removeClass("ui-draggable-handle");
+  $("#tcontent").removeClass("ui-draggable-handle");
+  $(".macosterm").draggable({handle: "#shellbar", containment: ".holder"});
+
 
   $(".menuitem").click(function() {
     if (menuActive === false) {

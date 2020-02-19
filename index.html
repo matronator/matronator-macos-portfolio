@@ -10,6 +10,7 @@
     <link href="/css/shell.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/jquery.terminal.min.css" rel="stylesheet">
+    <link href="/css/jquery-ui.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/taskbar.css" rel="stylesheet">
     <link href="/css/textedit.css" rel="stylesheet">
@@ -41,9 +42,10 @@
         <li><img class="statusicon" src="/img/ncenter.png"></li>
       </ul>
     </header>
+    <div class="header-shadow"></div>
 
     <div class="holder">
-      <div class="shell osx dark shadow" id="macosterm">
+      <div class="shell osx dark shadow window-active macosterm">
         <div class="status-bar" id="shellbar">
           <div class="buttons">
             <a href="https://matronator.com" class="close" title="Close">
@@ -63,7 +65,7 @@
 
 
       <!-- TextEdit -->
-      <div class="textedit active" id="tedit">
+      <div class="textedit active tedit">
         <div class="status-bar" id="teditbar">
           <div class="buttons">
             <a href="javascript:closeTextedit();" class="close" title="Close">
@@ -78,7 +80,7 @@
           </div>
           <div class="title-tedit" id="tetitle">TextEdit</div>
         </div>
-        <div class="tcontent" id="content"></div>
+        <div class="tcontent" id="teditcontent"></div>
       </div>
 
       <footer>

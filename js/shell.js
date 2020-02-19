@@ -1,8 +1,8 @@
 var shell = $('.shell');
 var shell = $('.shell');
-var editor = $("#tedit");
+var editor = $(".tedit");
 var editorTitle = $("#tetitle");
-var output = $("#content");
+var output = $("#teditcontent");
 var mdurl = "";
 var converter = new showdown.Converter();
 
@@ -69,7 +69,7 @@ function openTextedit(filname) {
     output.html(html);
     editor.show();
     editor.css("z-index", 1000);
-    $("#macosterm").css("z-index", 1000);
+    $(".macosterm").css("z-index", 1000);
   });
 }
 function closeTextedit() {
