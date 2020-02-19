@@ -102,6 +102,7 @@
 }
 
 .shell .status-bar {
+  box-sizing: content-box;
   position: relative;
   background: #333;
   border: 1px solid #292929;

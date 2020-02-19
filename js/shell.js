@@ -68,6 +68,8 @@ function openTextedit(filname) {
     html = converter.makeHtml(results);
     output.html(html);
     editor.show();
+    editor.css("z-index", 1000);
+    $("#macosterm").css("z-index", 1000);
   });
 }
 function closeTextedit() {
@@ -226,6 +228,3 @@ function prompt() {
     callback(prompt);
   };
 }
-
-// comment to check git workflow
-

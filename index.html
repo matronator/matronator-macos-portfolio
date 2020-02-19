@@ -27,6 +27,11 @@
         <li class="menuitem">Window</li>
         <li class="menuitem">Help</li>
       </ul>
+      <div class="collapse hidden">
+        <ul class="submenu">
+          <li class="menuitem submenuitem">New Finder Window</li>
+        </ul>
+      </div>
       <ul class="menu-left">
         <li><img class="statusicon" src="/img/wifi.png"></li>
         <li class="menuitem" id="date">Mon 12:00</li>
@@ -38,8 +43,8 @@
     </header>
 
     <div class="holder">
-      <div class="shell osx dark shadow">
-        <div class="status-bar">
+      <div class="shell osx dark shadow" id="macosterm">
+        <div class="status-bar" id="shellbar">
           <div class="buttons">
             <a href="https://matronator.com" class="close" title="Close">
               <i class="fa fa-times"></i>
@@ -55,40 +60,42 @@
         </div>
         <div class="content"></div>
       </div>
-    </div>
 
-    <!-- TextEdit -->
-    <div class="textedit active" id="tedit">
-      <div class="status-bar">
-        <div class="buttons">
-          <a href="javascript:closeTextedit();" class="close" title="Close">
-            <i class="fa fa-times"></i>
-          </a>
-          <a href="#" class="minimize" title="Minimize">
-            <i class="fa fa-minus"></i>
-          </a>
-          <a href="#" class="enlarge" title="Enlarge">
-            <i class="fa fa-plus"></i>
-          </a>
-        </div>
-        <div class="title-tedit" id="tetitle">TextEdit</div>
-      </div>
-      <div class="tcontent" id="content"></div>
-    </div>
 
-    <footer>
-      <div class="Dock">
-        <div class="Icon">
-          <img src="/img/osx-el-capitan-finder-icon.png" alt="Finder">
+      <!-- TextEdit -->
+      <div class="textedit active" id="tedit">
+        <div class="status-bar" id="teditbar">
+          <div class="buttons">
+            <a href="javascript:closeTextedit();" class="close" title="Close">
+              <i class="fa fa-times"></i>
+            </a>
+            <a href="#" class="minimize" title="Minimize">
+              <i class="fa fa-minus"></i>
+            </a>
+            <a href="#" class="enlarge" title="Enlarge">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+          <div class="title-tedit" id="tetitle">TextEdit</div>
         </div>
-        <div class="Icon">
-          <img src="/img/trash.png" alt="Trash">
-        </div>
+        <div class="tcontent" id="content"></div>
       </div>
-    </footer>
+
+      <footer>
+        <div class="Dock">
+          <div class="Icon">
+            <img src="/img/osx-el-capitan-finder-icon.png" alt="Finder">
+          </div>
+          <div class="Icon">
+            <img src="/img/trash.png" alt="Trash">
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="/js/jquery-1.7.1.min.js"></script>
     <script src="/js/jquery.terminal-2.12.0.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script src="/js/shell.js"></script>
     <script src="/js/taskbar.js"></script>

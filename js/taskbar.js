@@ -31,6 +31,17 @@ document.getElementById("date").innerHTML = day + " " + d.getHours() + ":" + min
 $( document ).ready(function() {
   let menuActive = false;
 
+  $("#tedit").draggable({handle: "#teditbar", containment: ".holder"});
+  $("#tedit").mousedown(function() {
+    $(this).css("z-index", 1000);
+    $("#macosterm").css("z-index", 999);
+  });
+  $("#macosterm").mousedown(function() {
+    $(this).css("z-index", 1000);
+    $("#tedit").css("z-index", 999);
+  });
+  $("#macosterm").draggable({handle: "#shellbar", containment: ".holder"});
+
   $(".menuitem").click(function() {
     if (menuActive === false) {
       $(".menuitem").each(function() {

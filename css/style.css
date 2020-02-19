@@ -4,20 +4,18 @@ html, body {
   overflow: hidden;
 }
 
-.holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 form {
   margin: 10px;
 }
 body .shell {
-  margin-left: -8vw;
-  margin-top: 60px;
+  position: absolute;
+  top: 18pt;
+  left: 10px;
   width: 80%;
   height: 520px;
+}
+#macosterm {
+  z-index: 999;
 }
 body .shell .terminal {
   height: calc(100% - 40px);
