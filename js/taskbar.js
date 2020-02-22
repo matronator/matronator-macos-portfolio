@@ -52,10 +52,11 @@ $( document ).ready(function() {
     cancel: "#teditcontent",
     scroll: false
   }).resizable({
-    minWidth: 480
+    minWidth: 480,
+    minHeight: 240
   });
   $("#teditbar").removeClass("ui-draggable-handle");
-  $("#tcontent").removeClass("ui-draggable-handle");
+  $("#teditcontent").removeClass("ui-draggable-handle");
   $(".macosterm").draggable({handle: "#shellbar", containment: [-9999, containArea.top, 9999, 9999], scroll: false});
 
 

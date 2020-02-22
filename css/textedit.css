@@ -14,8 +14,7 @@
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .textedit .status-bar {
