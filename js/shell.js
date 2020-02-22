@@ -1,5 +1,4 @@
 var shell = $('.shell');
-var shell = $('.shell');
 var editor = $(".tedit");
 var editorTitle = $("#tetitle");
 var output = $("#teditcontent");
@@ -44,8 +43,7 @@ function restore_cwd(fs, path) {
   while (path.length) {
     var dir_name = path.shift();
     if (!is_dir(fs[dir_name])) {
-      throw new Error('Internal Error Invalid directory ' +
-        $.terminal.escape_brackets(dir_name));
+      throw $.terminal.escape_brackets(dir_name);
     }
     fs = fs[dir_name];
   }
@@ -68,8 +66,8 @@ function openTextedit(filname) {
     html = converter.makeHtml(results);
     output.html(html);
     editor.show();
-    editor.css("z-index", 1000);
-    $(".macosterm").css("z-index", 1000);
+    editor.addClass("window-active");
+    $(".macosterm").removeClass("window-active");
   });
 }
 function closeTextedit() {
@@ -213,6 +211,9 @@ var term = $('.content').terminal(commands, {
   prompt: prompt(),
   completion: completion,
   checkArity: false,
+  exceptionHandler: function(execption) {
+    return this.error("-bash: cd: " + execption + ': No such file or directory');
+  },
   onInit: function() {
     this.echo("Welcome to my portfolio terminal. [[;white;]Type 'help' for list of available commands\r\nYou can autocomplete commands and file/folder names by pressing 'TAB']\r\n");
   }

@@ -29,6 +29,11 @@ let mins = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
 document.getElementById("date").innerHTML = day + " " + d.getHours() + ":" + mins;
 
 $( document ).ready(function() {
+  $(window).resize(function() {
+    $(document.body).width(window.innerWidth);
+    $(document.body).height(window.innerHeight);
+  });
+
   let menuActive = false;
 
   $(".tedit").mousedown(function() {
@@ -40,17 +45,18 @@ $( document ).ready(function() {
     $(".tedit").removeClass("window-active");
   });
 
+  let containArea = $(".holder").position();
   $(".tedit").draggable({
     handle: "#teditbar",
-    containment: ".holder",
-    cancel: "#teditcontent"
+    containment: [-9999, containArea.top, 9999, 9999],
+    cancel: "#teditcontent",
+    scroll: false
   }).resizable({
-    aspectRatio: true,
     minWidth: 480
   });
   $("#teditbar").removeClass("ui-draggable-handle");
   $("#tcontent").removeClass("ui-draggable-handle");
-  $(".macosterm").draggable({handle: "#shellbar", containment: ".holder"});
+  $(".macosterm").draggable({handle: "#shellbar", containment: [-9999, containArea.top, 9999, 9999], scroll: false});
 
 
   $(".menuitem").click(function() {
