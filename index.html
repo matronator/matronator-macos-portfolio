@@ -21,18 +21,13 @@
       <ul class="menu-right">
         <li><img class="appleLogo" src="/img/applelogo.png"></li>
         <li class="appname menuitem">Finder</li>
-        <li class="menuitem">File</li>
+        <li class="menuitem" id="menuFile" data-target="submenuFile">File</li>
         <li class="menuitem">Edit</li>
         <li class="menuitem">View</li>
         <li class="menuitem">Open</li>
         <li class="menuitem">Window</li>
         <li class="menuitem">Help</li>
       </ul>
-      <div class="collapse hidden">
-        <ul class="submenu">
-          <li class="menuitem submenuitem">New Finder Window</li>
-        </ul>
-      </div>
       <ul class="menu-left">
         <li><img class="statusicon" src="/img/wifi.png"></li>
         <li class="menuitem" id="date">Mon 12:00</li>
@@ -45,6 +40,39 @@
     <div class="header-shadow"></div>
 
     <div class="holder">
+      <!-- Dropdown menus -->
+      <div class="collapse hidden">
+        <ul class="submenu hidden" id="submenuFile">
+          <li class="menuitem submenuitem"><span class="subleft">New Finder Window</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">New Folder</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">New Folder with Selection</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem">New Smart Folder</li>
+          <li class="menuitem submenuitem"><span class="subleft">New Tab</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Open</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Open With</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Print</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Close Window</span><span class="subright">A</span></li>
+          <li class="menuitem divider"><hr></li>
+          <li class="menuitem submenuitem"><span class="subleft">Get Info</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem">Rename</li>
+          <li class="menuitem divider"><hr></li>
+          <li class="menuitem submenuitem">Compress</li>
+          <li class="menuitem divider"><hr></li>
+          <li class="menuitem submenuitem"><span class="subleft">Duplicate</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Make Alias</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Quick Look</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Show Original</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Add to Dock</span><span class="subright">A</span></li>
+          <li class="menuitem divider"><hr></li>
+          <li class="menuitem submenuitem"><span class="subleft">Move to Trash</span><span class="subright">A</span></li>
+          <li class="menuitem submenuitem"><span class="subleft">Eject</span><span class="subright">A</span></li>
+          <li class="menuitem divider"><hr></li>
+          <li class="menuitem submenuitem"><span class="subleft">Find</span><span class="subright">A</span></li>
+          <li class="menuitem divider"><hr></li>
+        </ul>
+      </div>
+
+      <!-- Terminal -->
       <div class="shell osx dark shadow window-active macosterm">
         <div class="status-bar" id="shellbar">
           <div class="buttons">

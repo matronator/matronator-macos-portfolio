@@ -61,25 +61,55 @@ $( document ).ready(function() {
 
 
   $(".menuitem").click(function() {
+    var dataid = $(this).data("target");
+    var self = $(this);
     if (menuActive === false) {
       $(".menuitem").each(function() {
         $(this).removeClass("active");
       });
-      $(this).addClass("active");
+      self.addClass("active");
+      $(".collapse").removeClass("hidden");
+      $(".submenu").each(function() {
+        $(this).addClass("hidden");
+      });
+      $("#" + dataid).removeClass("hidden");
+      $("#" + dataid).offset({ top: $("header").height(), left: self.offset().left });
       menuActive = true;
     } else {
       $(".menuitem").each(function() {
         $(this).removeClass("active");
       });
+      $(".collapse").addClass("hidden");
+      $(".submenu").each(function() {
+        $(this).addClass("hidden");
+      });
       menuActive = false;
     }
   });
 
-  $(".menuitem").mouseenter(function() {
+  $(".submenuitem").mouseenter(function() {
+    if (menuActive === true) {
+      $(this).addClass("active");
+    }
+  });
+  $(".submenuitem").mouseleave(function() {
+    if (menuActive === true) {
+      $(this).removeClass("active");
+    }
+  });
+
+  $("header .menuitem").mouseenter(function() {
+    var dataid = $(this).data("target");
+    var self = $(this);
     if (menuActive === true) {
       $(".menuitem").each(function() {
         $(this).removeClass("active");
       });
+      $(".submenu").each(function() {
+        $(this).addClass("hidden");
+      });
+      $("#" + dataid).removeClass("hidden");
+      $("#" + dataid).offset({ top: $("header").height(), left: self.offset().left });
       $(this).addClass("active");
     }
   });
@@ -88,6 +118,10 @@ $( document ).ready(function() {
     if (!$(e.target).hasClass("menuitem")) {
       $(".menuitem").each(function() {
         $(this).removeClass("active");
+      });
+      $(".collapse").addClass("hidden");
+      $(".submenu").each(function() {
+        $(this).addClass("hidden");
       });
       menuActive = false;
     }
